@@ -1,4 +1,5 @@
 const mongoose = require('mongoose')
+const User = require('./user')
 mongoose.set('useFindAndModify', false)
 
 const noteSchema = new mongoose.Schema({
@@ -9,9 +10,13 @@ const noteSchema = new mongoose.Schema({
     },
     date: {
         type: Date,
-        required: true
+        required: false
     },
     important: Boolean,
+    user: {
+        type: mongoose.Schema.Types.ObjectId,
+        ref: 'User'
+    }
 })
 
 noteSchema.set('toJSON', {

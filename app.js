@@ -1,10 +1,13 @@
 const express = require('express')
 const config = require('./utils/config')
 const app = express()
+require('express-async-errors')
 const middlewares = require('./utils/middleware')
 const notesRouter = require('./controllers/notes')
 const mongoose = require('mongoose')
 const logger = require('./utils/logger')
+const usersRouter = require('./controllers/users')
+
 
 logger.info('connecting to', config.MONGOURL)
 
@@ -21,6 +24,7 @@ app.use(express.json())
 app.use(middlewares.requestLogger)
 
 app.use('/api/notes', notesRouter)
+app.use('/api/users', usersRouter)
 
 app.use(middlewares.unknownEndpoint)
 app.use(middlewares.errorHandler)
