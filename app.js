@@ -7,6 +7,7 @@ const notesRouter = require('./controllers/notes')
 const mongoose = require('mongoose')
 const logger = require('./utils/logger')
 const usersRouter = require('./controllers/users')
+const loginRouter = require('./controllers/login')
 
 
 logger.info('connecting to', config.MONGOURL)
@@ -25,6 +26,7 @@ app.use(middlewares.requestLogger)
 
 app.use('/api/notes', notesRouter)
 app.use('/api/users', usersRouter)
+app.use('/api/login', loginRouter)
 
 app.use(middlewares.unknownEndpoint)
 app.use(middlewares.errorHandler)
