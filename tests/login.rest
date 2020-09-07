@@ -1,10 +1,10 @@
-post http://localhost:3001/api/notes
+post http://localhost:3001/api/users
 Content-Type: application/json
-Authorization: bearer yJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6IkJydWhNb21lbnRsb2wiLCJpZCI6IjVmMjljNzQwZjQwYjBiMTdjMDViZDEzZSIsImlhdCI6MTU5NjU3MzU2Mn0.3J5Kl0Q-EkSrda-S6CRx1DRuNSipxgf3z58v1RORPPg
 
 {
-    "content": "Single page apps use token authentication",
-    "important": true
+    "username": "ethanlatimer",
+    "name": "ethan latimer",
+    "password": "BruhMoment"
 }
 
 
